@@ -12,7 +12,10 @@ It leverages the power of Large Language Models (LLMs) through the GROQ inferenc
 - **🐳 Deployment:** The entire application is containerized with Docker and deployed on a Kubernetes cluster running in a GCP VM instance.
 
 ## 📦 Installating & Running Locally
-- **Clone this repo & CD Anime-Recommender-System-LLMOPS :** ```git clone https://github.com/P-RajaRamesh/Anime-Recommender-System-LLMOPS.git```
+- **Clone this repo & CD Anime-Recommender-System-LLMOPS :**
+  ```
+  git clone https://github.com/P-RajaRamesh/Anime-Recommender-System-LLMOPS.git
+  ```
 - **Create Virtual Environment :** ```conda create -p venv1 python==3.10```
 - **Activate Virtual Environment :** ```conda activate venv1\```
 - **Install Requirements :** ```pip install -e .```
@@ -176,10 +179,10 @@ git push origin main
   - **Ignore** If wrong secrets entered : ```kubectl delete secret llmops-secrets```
   - **Ignore** If secrets are in another name space :```kubectl delete secret llmops-secrets -n my-namespace```
   - **Ignore** To get name spaces : ```kubectl get ns```
-  - Apply Kubernetes configuration file to your cluster : ```kubectl apply -f llmops-k8s.yaml```
+  - Apply Kubernetes deployment file to your cluster : ```kubectl apply -f llmops-k8s.yaml```
   - To see PODs running : ```kubectl get pods```
-  - Do minikube tunnel on this terminal : ```minikube tunnel```
-  - Open another terminal (SSH) : ```kubectl port-forward svc/llmops-service 8501:80 --address 0.0.0.0```
+  - Do minikube tunnel on this terminal for assigning external ip to LoadBalancer : ```minikube tunnel```
+  - Open another terminal (SSH), port-forward for quick access externally : ```kubectl port-forward svc/llmops-service 8501:80 --address 0.0.0.0```
 ---
 
 ### 9. Now copy VM External IP in Google Cloud & append ```:8501``` and checkout your Application...
