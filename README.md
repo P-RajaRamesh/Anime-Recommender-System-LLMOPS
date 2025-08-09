@@ -182,4 +182,4 @@ git push origin main
   - Open another terminal (SSH) : ```kubectl port-forward svc/llmops-service 8501:80 --address 0.0.0.0```
 ---
 
-### 9. Now copy VM External IP in Google Cloud & append ```:8501``` and checkout your Application.
+### 9. Now copy VM External IP in Google Cloud & append ```:8501``` and checkout your Application...
